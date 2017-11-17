@@ -25,31 +25,31 @@ Just clone the repo and built for your self.
 ## Sample ##
 Let´s assume we have an app that does some MS Office-automation. Hence it requires certain assemblies from the Office-SDKs. We identify a bunch of available assemblies and copy them to c:\temp\officeSDK. The contents of the directory might look like his:
 
-> Microsoft.Office.Interop.OneNote.dll
-> Microsoft.Office.Interop.Outlook.dll
-> Microsoft.Office.Interop.OutlookViewCtl.dll
-> Microsoft.Office.Interop.PowerPoint.dll
-> Microsoft.Office.Interop.Publisher.dll
-> Microsoft.Office.Interop.SharePointDesigner.dll
-> Microsoft.Office.Interop.SharePointDesignerPage.dll
-> Microsoft.Office.Interop.SmartTag.dll
-> Microsoft.Office.Interop.Visio.dll
-> Microsoft.Office.Interop.Visio.SaveAsWeb.dll
-> Microsoft.Office.Interop.VisOcx.dll
-> Microsoft.Office.Interop.Word.dll
-> Microsoft.Vbe.Interop.dll
-> Microsoft.Vbe.Interop.Forms.dll
-> Office.dll
-> IPDMCTRL.dll
-> Microsoft.Office.InfoPath.Permission.dll
-> Microsoft.Office.interop.access.dao.dll
-> Microsoft.Office.Interop.Access.dll
-> Microsoft.Office.Interop.Excel.dll
-> Microsoft.Office.Interop.Graph.dll
-> Microsoft.Office.Interop.InfoPath.dll
-> Microsoft.Office.Interop.InfoPath.SemiTrust.dll
-> Microsoft.Office.Interop.InfoPath.Xml.dll
-> Microsoft.Office.Interop.MSProject.dll
+- Microsoft.Office.Interop.OneNote.dll
+- Microsoft.Office.Interop.Outlook.dll
+- Microsoft.Office.Interop.OutlookViewCtl.dll
+- Microsoft.Office.Interop.PowerPoint.dll
+- Microsoft.Office.Interop.Publisher.dll
+- Microsoft.Office.Interop.SharePointDesigner.dll
+- Microsoft.Office.Interop.SharePointDesignerPage.dll
+- Microsoft.Office.Interop.SmartTag.dll
+- Microsoft.Office.Interop.Visio.dll
+- Microsoft.Office.Interop.Visio.SaveAsWeb.dll
+- Microsoft.Office.Interop.VisOcx.dll
+- Microsoft.Office.Interop.Word.dll
+- Microsoft.Vbe.Interop.dll
+- Microsoft.Vbe.Interop.Forms.dll
+- Office.dll
+- IPDMCTRL.dll
+- Microsoft.Office.InfoPath.Permission.dll
+- Microsoft.Office.interop.access.dao.dll
+- Microsoft.Office.Interop.Access.dll
+- Microsoft.Office.Interop.Excel.dll
+- Microsoft.Office.Interop.Graph.dll
+- Microsoft.Office.Interop.InfoPath.dll
+- Microsoft.Office.Interop.InfoPath.SemiTrust.dll
+- Microsoft.Office.Interop.InfoPath.Xml.dll
+- Microsoft.Office.Interop.MSProject.dll
 
 TeGun uses a config file for most of it´s settings atm. Think of it as C#-project file or a meta-nuspec. Let´s initialize a new config:
 
@@ -109,32 +109,32 @@ If we know invoke the command:
 
 tegun will create nuspec-files according to the above settings in the subfolder *office/nuspecs*:
 
-> OfficeBundle.Sample.1.2.3.4.nuspec
-> earloc.Microsoft.Office.xxx.InfoPath.SemiTrust.11.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.InfoPath.Xml.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.MSProject.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.OneNote.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.Outlook.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.OutlookViewCtl.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.PowerPoint.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.Publisher.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.SharePointDesigner.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.SharePointDesignerPage.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.SmartTag.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.Visio.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.Visio.SaveAsWeb.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.VisOcx.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.Word.14.0.0.0.nuspec
-> earloc.Microsoft.Vbe.xxx.14.0.0.0.nuspec
-> earloc.Microsoft.Vbe.xxx.Forms.11.0.0.0.nuspec
-> earloc.office.14.0.0.0.nuspec
-> earloc.ipdmctrl.11.0.0.0.nuspec
-> earloc.Microsoft.Office.InfoPath.Permission.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.Access.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.Access.Dao.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.Excel.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.Graph.14.0.0.0.nuspec
-> earloc.Microsoft.Office.xxx.InfoPath.14.0.0.0.nuspec
+- OfficeBundle.Sample.1.2.3.4.nuspec
+- earloc.Microsoft.Office.xxx.InfoPath.SemiTrust.11.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.InfoPath.Xml.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.MSProject.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.OneNote.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.Outlook.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.OutlookViewCtl.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.PowerPoint.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.Publisher.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.SharePointDesigner.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.SharePointDesignerPage.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.SmartTag.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.Visio.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.Visio.SaveAsWeb.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.VisOcx.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.Word.14.0.0.0.nuspec
+- earloc.Microsoft.Vbe.xxx.14.0.0.0.nuspec
+- earloc.Microsoft.Vbe.xxx.Forms.11.0.0.0.nuspec
+- earloc.office.14.0.0.0.nuspec
+- earloc.ipdmctrl.11.0.0.0.nuspec
+- earloc.Microsoft.Office.InfoPath.Permission.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.Access.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.Access.Dao.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.Excel.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.Graph.14.0.0.0.nuspec
+- earloc.Microsoft.Office.xxx.InfoPath.14.0.0.0.nuspec
 
 These nuspecs can now be further tweaked to your needs and be used to produce packages, e.g. with a simple batch file in the *office* subfolder:
 
@@ -145,32 +145,32 @@ These nuspecs can now be further tweaked to your needs and be used to produce pa
 
 will produce the following packages at *office/packages*:
 
-> earloc.Microsoft.Office.xxx.SharePointDesigner.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.SharePointDesignerPage.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.SmartTag.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.Visio.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.Visio.SaveAsWeb.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.VisOcx.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.Word.14.0.0.nupkg
-> earloc.Microsoft.Vbe.xxx.14.0.0.nupkg
-> earloc.Microsoft.Vbe.xxx.Forms.11.0.0.nupkg
-> earloc.office.14.0.0.nupkg
-> OfficeBundle.Sample.1.2.3.4.nupkg
-> earloc.ipdmctrl.11.0.0.nupkg
-> earloc.Microsoft.Office.InfoPath.Permission.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.Access.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.Access.Dao.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.Excel.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.Graph.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.InfoPath.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.InfoPath.SemiTrust.11.0.0.nupkg
-> earloc.Microsoft.Office.xxx.InfoPath.Xml.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.MSProject.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.OneNote.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.Outlook.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.OutlookViewCtl.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.PowerPoint.14.0.0.nupkg
-> earloc.Microsoft.Office.xxx.Publisher.14.0.0.nupkg
+- OfficeBundle.Sample.1.2.3.4.nupkg
+- earloc.Microsoft.Office.xxx.SharePointDesigner.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.SharePointDesignerPage.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.SmartTag.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.Visio.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.Visio.SaveAsWeb.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.VisOcx.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.Word.14.0.0.nupkg
+- earloc.Microsoft.Vbe.xxx.14.0.0.nupkg
+- earloc.Microsoft.Vbe.xxx.Forms.11.0.0.nupkg
+- earloc.office.14.0.0.nupkg
+- earloc.ipdmctrl.11.0.0.nupkg
+- earloc.Microsoft.Office.InfoPath.Permission.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.Access.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.Access.Dao.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.Excel.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.Graph.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.InfoPath.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.InfoPath.SemiTrust.11.0.0.nupkg
+- earloc.Microsoft.Office.xxx.InfoPath.Xml.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.MSProject.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.OneNote.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.Outlook.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.OutlookViewCtl.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.PowerPoint.14.0.0.nupkg
+- earloc.Microsoft.Office.xxx.Publisher.14.0.0.nupkg
 
 
 
