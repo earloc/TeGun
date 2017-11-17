@@ -1,0 +1,23 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>{PackageId}</id>
+    <version>{PackageVersion}</version>
+    <title>{PackageTitle}</title>
+    <authors>{Authors}</authors>
+    <owners>{Owners}</owners>
+    <description>{Description}</description>
+    <releaseNotes>{ReleaseNotes}</releaseNotes>
+    <summary>
+    </summary>
+    <language>en-US</language>
+    <references></references>
+    <tags>{Tags}</tags>
+    <dependencies>
+{Dependencies}
+    </dependencies>
+  </metadata>
+  <files>
+{Files}
+  </files>
+</package>

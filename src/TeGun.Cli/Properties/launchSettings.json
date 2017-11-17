@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "TeGun": {
+      "commandName": "Project",
+      "commandLineArgs": "nuspec DevExpress",
+      "workingDirectory": "C:\\working\\git\\NugetPackages"
+    }
+  }
+}

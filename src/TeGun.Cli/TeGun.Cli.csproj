@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <LangVersion>7.1</LangVersion>
+    <Version>0.1.0-alpha01</Version>
+    <Company>Alexander Clare</Company>
+    <Authors>Alexander Clare</Authors>
+    <Copyright>2017 Alexander Clare</Copyright>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/earloc/TeGun</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/earloc/TeGun</RepositoryUrl>
+    <PackageTags>DevOps NuGet create commandline utility</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>0.1.0 inital release</PackageReleaseNotes>
+    <PackageId>TeGun.Cli</PackageId>
+    <AssemblyName>TeGun</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.1.1-beta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TeGun.Core\TeGun.Core.csproj" />
+  </ItemGroup>
+
+</Project>
