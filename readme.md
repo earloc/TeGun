@@ -103,7 +103,7 @@ Open the config to tweak the package-creation to your needs:
     }
 
 
-If we know invoke the command:
+If we now invoke the command:
 
     tegun nuspec office
 
