@@ -5,9 +5,9 @@ for creating NuGet-Packages out of ordinary, unpackaged assemblies.
 ## Synopsis ##
 TeGun (NuGet reversed) is a simple, yet handy cross-platform(.netcore) commandline-utility for creating nuget packages (nupkg) from a bunch of ordinary assembliy files. 
 The main goal is to provide a fast tooling experience when dealing with third-party assemblies that do not come packaged via e.g. Nuget.org.
-Such assemblies quick become unhandy when confronted with any CI/CD-Environment, as those often need to be either installed on (a variaty of)build-machines or - most of the time - get their way into version control systems, which unnessecarely bloats the code repository (especially in cloud-hosted build environments, where such dependencies can´t even be installed).
+Such assemblies quick become unhandy when confronted with any CI/CD-Environment, as those often need to be either installed on (a variaty of) build-machines or - most of the time - get their way into version control systems, which unnecessarily bloats the code repository (especially in cloud-hosted build environments, where such dependencies can´t even be installed).
 
-Even though most of the open-source based goodness out there is consumable via NuGet-feeds, various assemblies and whole frameworks  exists that are not accessible via this route (maybe because they require a paid subscription and therfore are not in any public feeds).
+Even though most of the open-source based goodness out there is consumable via NuGet-feeds, various assemblies and whole frameworks exists that are not accessible via this route (maybe because they require a paid subscription and therfore are not in any public feed).
 
 To help out in such on-premise scenarios, this project was born.
 
