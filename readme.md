@@ -3,7 +3,7 @@
 for creating NuGet-Packages out of ordinary, unpackaged assemblies.
 
 ## Synopsis ##
-TeGun (NuGet reversed) is a simple, yet handy cross-platform(.netcore) commandline-utility for creating nuget packages (nupkg) from a bunch of ordinary assembliy files. 
+TeGun (NuGet reversed) is a simple, yet handy cross-platform(.netcore) commandline-utility for creating nuget packages (nupkg) from a bunch of ordinary, unpackaged assemblies. 
 The main goal is to provide a fast tooling experience when dealing with third-party assemblies that do not come packaged via e.g. Nuget.org.
 Such assemblies quick become unhandy when confronted with any CI/CD-Environment, as those often need to be either installed on (a variaty of) build-machines or - most of the time - get their way into version control systems, which unnecessarily bloats the code repository (especially in cloud-hosted build environments, where such dependencies can´t even be installed).
 
@@ -120,7 +120,6 @@ If we now invoke the command:
 tegun will create nuspec-files according to the above settings in the subfolder *office/nuspecs*:
 
 - OfficeBundle.Sample.1.2.3.4.nuspec
-
 - earloc.Microsoft.Office.xxx.OneNote.14.0.0.0.nuspec
 - earloc.Microsoft.Office.xxx.Outlook.14.0.0.0.nuspec
 - earloc.Microsoft.Office.xxx.OutlookViewCtl.14.0.0.0.nuspec
