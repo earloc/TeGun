@@ -1,4 +1,4 @@
-# TeGun - The KickAss DevOps utility #
+# dotnet-TeGun - The KickAss DevOps utility #
 
 for creating NuGet-Packages out of ordinary, unpackaged assemblies.
 
@@ -14,9 +14,21 @@ To help out in such on-premise scenarios, this project was born.
 ## How it works ##
 TeGun simply scans a directory for assemblies and analyzes their dependency-hierarchy. This hierarchy-information is then used to generate nuspec-files, which in turn can be used in conjunction with NuGet.exe to generate packages. The nuspec-files can then be used to automate package-creation or be used as a basis for more or finer grained modifications.
 
-## Download ##
-Sorry folks, no pre-built releases yet.
-Just clone the repo and built for your self.
+## Download / Installation ##
+Sorry folks, no pre-built / standalone releases yet.
+
+However, TeGun is available as a dotnet cli extension. Just place an ItemGroup in any project-file that supports .NetCore tooling :
+
+    <ItemGroup>
+      <DotNetCliToolReference Include="dotnet-tegun" Version="0.3.0-pre"/>
+    </ItemGroup>
+
+and run
+
+    dotnet restore
+
+
+Or just clone the repo and built for your self.
 
 ## Prerequisits ##
 - [.net core 2 SDK](https://www.microsoft.com/net/learn/get-started/windows) installed for building and running
@@ -30,30 +42,28 @@ Let´s assume we have an app that does some MS Office-automation. Hence it requi
 - Microsoft.Office.Interop.OutlookViewCtl.dll
 - Microsoft.Office.Interop.PowerPoint.dll
 - Microsoft.Office.Interop.Publisher.dll
-- Microsoft.Office.Interop.SharePointDesigner.dll
-- Microsoft.Office.Interop.SharePointDesignerPage.dll
-- Microsoft.Office.Interop.SmartTag.dll
-- Microsoft.Office.Interop.Visio.dll
-- Microsoft.Office.Interop.Visio.SaveAsWeb.dll
-- Microsoft.Office.Interop.VisOcx.dll
-- Microsoft.Office.Interop.Word.dll
-- Microsoft.Vbe.Interop.dll
-- Microsoft.Vbe.Interop.Forms.dll
-- Office.dll
-- IPDMCTRL.dll
-- Microsoft.Office.InfoPath.Permission.dll
-- Microsoft.Office.interop.access.dao.dll
-- Microsoft.Office.Interop.Access.dll
-- Microsoft.Office.Interop.Excel.dll
-- Microsoft.Office.Interop.Graph.dll
-- Microsoft.Office.Interop.InfoPath.dll
-- Microsoft.Office.Interop.InfoPath.SemiTrust.dll
-- Microsoft.Office.Interop.InfoPath.Xml.dll
-- Microsoft.Office.Interop.MSProject.dll
+- ...
+
+
+In order to invoke TeGun, we utilize the dotnet cli extension point as described above. Therefor, we need a dummy project, which we create with
+
+    dotnet new console
+
+Edit the created projcet file and include:
+
+    <ItemGroup>
+      <DotNetCliToolReference Include="dotnet-tegun" Version="0.3.0-pre"/>
+    </ItemGroup>
+
+after running
+    dotnet restore
+
+we are now ready to let TeGun do it´s magic ;)
+
 
 TeGun uses a config file for most of it´s settings atm. Think of it as C#-project file or a meta-nuspec. Let´s initialize a new config:
 
-    tegun init office
+    dotnet tegun init office
 
 This wil create an initial *office.config.json* pointing to assemblies in the current directory.
 
@@ -105,36 +115,18 @@ Open the config to tweak the package-creation to your needs:
 
 If we now invoke the command:
 
-    tegun nuspec office
+    dotnet tegun nuspec office
 
 tegun will create nuspec-files according to the above settings in the subfolder *office/nuspecs*:
 
 - OfficeBundle.Sample.1.2.3.4.nuspec
-- earloc.Microsoft.Office.xxx.InfoPath.SemiTrust.11.0.0.0.nuspec
-- earloc.Microsoft.Office.xxx.InfoPath.Xml.14.0.0.0.nuspec
-- earloc.Microsoft.Office.xxx.MSProject.14.0.0.0.nuspec
+
 - earloc.Microsoft.Office.xxx.OneNote.14.0.0.0.nuspec
 - earloc.Microsoft.Office.xxx.Outlook.14.0.0.0.nuspec
 - earloc.Microsoft.Office.xxx.OutlookViewCtl.14.0.0.0.nuspec
 - earloc.Microsoft.Office.xxx.PowerPoint.14.0.0.0.nuspec
 - earloc.Microsoft.Office.xxx.Publisher.14.0.0.0.nuspec
-- earloc.Microsoft.Office.xxx.SharePointDesigner.14.0.0.0.nuspec
-- earloc.Microsoft.Office.xxx.SharePointDesignerPage.14.0.0.0.nuspec
-- earloc.Microsoft.Office.xxx.SmartTag.14.0.0.0.nuspec
-- earloc.Microsoft.Office.xxx.Visio.14.0.0.0.nuspec
-- earloc.Microsoft.Office.xxx.Visio.SaveAsWeb.14.0.0.0.nuspec
-- earloc.Microsoft.Office.xxx.VisOcx.14.0.0.0.nuspec
-- earloc.Microsoft.Office.xxx.Word.14.0.0.0.nuspec
-- earloc.Microsoft.Vbe.xxx.14.0.0.0.nuspec
-- earloc.Microsoft.Vbe.xxx.Forms.11.0.0.0.nuspec
-- earloc.office.14.0.0.0.nuspec
-- earloc.ipdmctrl.11.0.0.0.nuspec
-- earloc.Microsoft.Office.InfoPath.Permission.14.0.0.0.nuspec
-- earloc.Microsoft.Office.xxx.Access.14.0.0.0.nuspec
-- earloc.Microsoft.Office.xxx.Access.Dao.14.0.0.0.nuspec
-- earloc.Microsoft.Office.xxx.Excel.14.0.0.0.nuspec
-- earloc.Microsoft.Office.xxx.Graph.14.0.0.0.nuspec
-- earloc.Microsoft.Office.xxx.InfoPath.14.0.0.0.nuspec
+- ...
 
 These nuspecs can now be further tweaked to your needs and be used to produce packages, e.g. with a simple batch file in the *office* subfolder:
 
@@ -146,31 +138,12 @@ These nuspecs can now be further tweaked to your needs and be used to produce pa
 will produce the following packages at *office/packages*:
 
 - OfficeBundle.Sample.1.2.3.4.nupkg
-- earloc.Microsoft.Office.xxx.SharePointDesigner.14.0.0.nupkg
-- earloc.Microsoft.Office.xxx.SharePointDesignerPage.14.0.0.nupkg
-- earloc.Microsoft.Office.xxx.SmartTag.14.0.0.nupkg
-- earloc.Microsoft.Office.xxx.Visio.14.0.0.nupkg
-- earloc.Microsoft.Office.xxx.Visio.SaveAsWeb.14.0.0.nupkg
-- earloc.Microsoft.Office.xxx.VisOcx.14.0.0.nupkg
-- earloc.Microsoft.Office.xxx.Word.14.0.0.nupkg
-- earloc.Microsoft.Vbe.xxx.14.0.0.nupkg
-- earloc.Microsoft.Vbe.xxx.Forms.11.0.0.nupkg
-- earloc.office.14.0.0.nupkg
-- earloc.ipdmctrl.11.0.0.nupkg
-- earloc.Microsoft.Office.InfoPath.Permission.14.0.0.nupkg
-- earloc.Microsoft.Office.xxx.Access.14.0.0.nupkg
-- earloc.Microsoft.Office.xxx.Access.Dao.14.0.0.nupkg
-- earloc.Microsoft.Office.xxx.Excel.14.0.0.nupkg
-- earloc.Microsoft.Office.xxx.Graph.14.0.0.nupkg
-- earloc.Microsoft.Office.xxx.InfoPath.14.0.0.nupkg
-- earloc.Microsoft.Office.xxx.InfoPath.SemiTrust.11.0.0.nupkg
-- earloc.Microsoft.Office.xxx.InfoPath.Xml.14.0.0.nupkg
-- earloc.Microsoft.Office.xxx.MSProject.14.0.0.nupkg
 - earloc.Microsoft.Office.xxx.OneNote.14.0.0.nupkg
 - earloc.Microsoft.Office.xxx.Outlook.14.0.0.nupkg
 - earloc.Microsoft.Office.xxx.OutlookViewCtl.14.0.0.nupkg
 - earloc.Microsoft.Office.xxx.PowerPoint.14.0.0.nupkg
 - earloc.Microsoft.Office.xxx.Publisher.14.0.0.nupkg
+- ...
 
 
 
