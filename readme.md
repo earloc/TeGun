@@ -1,4 +1,4 @@
-# dotnet-TeGun - The KickAss DevOps utility #
+# dotnet-tegun - The KickAss DevOps utility #
 
 for creating NuGet-Packages out of ordinary, unpackaged assemblies.
 
