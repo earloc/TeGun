@@ -11,15 +11,16 @@
     <Product>dotnet-tegun</Product>
     <Copyright>Copyright (c) 2017 Alexander Clare</Copyright>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>DevOps NuGet create commandline utility</PackageTags>
+    <PackageTags>dotnet cli extension DevOps NuGet create nuspec</PackageTags>
     <PackageReleaseNotes>0.2.0 optimize logging output
 0.1.0 inital release
 </PackageReleaseNotes>
     <AssemblyVersion>0.2.0.0</AssemblyVersion>
     <FileVersion>0.2.0.0</FileVersion>
-    <Version>0.2.0-alpha01</Version>
+    <Version>0.2.1-alpha</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseUrl>https://github.com/earloc/TeGun/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl>https://github.com/earloc/TeGun/raw/master/assets/tegun.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>

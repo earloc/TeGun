@@ -7,26 +7,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using TeGun.Commands;
 using TeGun.Configuration;
-using TeGun.Cli.Options;
+using TeGun.Cli.Verbs;
 using TeGun.Reflection;
 
 namespace TeGun.Cli {
     class Program {
         public static async Task Main(string[] args) {
-
             var parser = Parser.Default;
 
             var task = Task.Delay(50);
             var log = new ConsoleLog();
 
-            parser.ParseArguments<InitOptions, NuSpecOptions>(args)
-                .WithParsed<InitOptions>(x => task = InitAsync(x, log))
-                .WithParsed<NuSpecOptions>( x => task = CreateNuSpecCommand.RunAsync(x.Configuration, log));
+            parser.ParseArguments<InitVerb, NuSpecVerb>(args)
+                .WithParsed<InitVerb>(x => task = InitAsync(x, log))
+                .WithParsed<NuSpecVerb>(x => task = CreateNuSpecCommand.RunAsync(x.Configuration, log));
 
             try {
                 await task;
             }
-            catch(Exception ex) {
+            catch (Exception ex) {
                 log.Error(ex.Message, ex);
             }
 
@@ -34,24 +33,25 @@ namespace TeGun.Cli {
                 Console.ReadKey();
         }
 
-        private static async Task InitAsync(InitOptions options, ILog log) {
+
+        private static async Task InitAsync(InitVerb verb, ILog log) {
 
             await Task.Yield();
 
-            if (!options.ConfigFile.Exists || options.Force) {
-                var config = new Config(options.ConfigName);
-                config.Assemblies.SourcePaths = new string[] { options.AssemblyPath };
+            if (!verb.ConfigFile.Exists || verb.Force) {
+                var config = new Config(verb.ConfigName);
+                config.Assemblies.SourcePaths = new string[] { verb.AssemblyPath };
 
                 var content = config.Save();
 
                 log.Info(content);
 
 
-                Console.WriteLine($"Config created at '{options.ConfigFile.FullName}'");
+                Console.WriteLine($"Config created at '{verb.ConfigFile.FullName}'");
                 return;
             }
 
-            Console.WriteLine($"Config already exists at {options.ConfigFile.FullName}. Use the --force switch to overwrite it with default values.");
+            Console.WriteLine($"Config already exists at {verb.ConfigFile.FullName}. Use the --force switch to overwrite it with default values.");
         }
 
       

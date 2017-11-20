@@ -6,15 +6,15 @@ using System.IO;
 using System.Text;
 using TeGun.Configuration;
 
-namespace TeGun.Cli.Options {
+namespace TeGun.Cli.Verbs {
     [Verb("nuspec")]
-    internal class NuSpecOptions {
+    internal class NuSpecVerb {
 
         [Value(0, Default = "default", HelpText = "Name of config to use")]
         public string ConfigName { get; set; }
 
 
-        public NuSpecOptions() {
+        public NuSpecVerb() {
             _Config = new Lazy<Config>(() => Config.From(ConfigName));
             
         }

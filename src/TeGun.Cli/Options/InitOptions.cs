@@ -7,9 +7,9 @@ using System.IO;
 using System.Text;
 using TeGun.Configuration;
 
-namespace TeGun.Cli.Options {
+namespace TeGun.Cli.Verbs {
     [Verb("init")]
-    internal class InitOptions {
+    internal class InitVerb {
 
         [Value(0, Default=".", HelpText = "path to assemblies")]
         public string AssemblyPath { get; set; }
@@ -23,7 +23,7 @@ namespace TeGun.Cli.Options {
 
         private readonly Lazy<FileInfo> _ConfigFile;
 
-        public InitOptions() {
+        public InitVerb() {
             _ConfigFile = new Lazy<FileInfo>(() => Config.FileFor(ConfigName));
         }
 
