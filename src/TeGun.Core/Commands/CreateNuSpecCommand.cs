@@ -28,13 +28,30 @@ namespace TeGun.Commands {
 
         public async Task RunAsync() {
 
+            _Log.Info("(+) => included references");
+            _Log.Info("(-) => ignored references");
+            _Log.Info("(~) => identified package rerferences");
+
+            _Log.Info("");
+
+            _Log.Info($"analyzing assemblies in");
+
+            foreach (var path in _Config.Assemblies.SourcePaths)
+                _Log.Info($"  {path}");
+
+            
+
             var folder = new AssemblySource(_Config.Assemblies.Sources, _Config.Assemblies.ExcludePatterns);
             var assemblies = await folder.GetAssembliesAsync();
 
             var orderedByLeastReferences = assemblies.OrderBy(x => x.KnownReferences.Count());
 
+            _Log.Info("");
             Echo(orderedByLeastReferences);
 
+            _Log.Info("");
+            _Log.Info("deriving bundles / pacakges");
+            _Log.Info("");
 
             var bundler = new Bundler(_Config);
             var bundles = bundler.GetBundles(orderedByLeastReferences);
@@ -45,15 +62,15 @@ namespace TeGun.Commands {
 
             var writer = new NuSpecWriter(_Config);
 
+            _Log.Info($"writing nuspec files to : {_Config.NuSpecDirectory}");
 
             foreach (var bundle in bundles) {
-                var nuspecPath = Path.Combine(_Config.NuSpecDirectory.FullName, $"{bundle.PackageFullName}.nuspec");
+                var target = new FileInfo(Path.Combine(_Config.NuSpecDirectory.FullName, $"{bundle.PackageFullName}.nuspec"));
                 var nuspecContent = writer.GetNuSpec(bundle);
 
-                _Log.Info($"writing nuspec file '{nuspecPath}'");
-                File.WriteAllText(nuspecPath, nuspecContent);
+                _Log.Info($"  {target.Name}");
+                File.WriteAllText(target.FullName, nuspecContent);
             }
-            
 
            _Log.Info($"created {bundles.Count()} nuspec(s)");
         }
@@ -62,44 +79,36 @@ namespace TeGun.Commands {
 
         private void Echo(IEnumerable<AssemblyModel> assemblies) {
             foreach (var assembly in assemblies) {
-                _Log?.Info(($"{assembly} ({assembly.KnownReferences.Count()} reference(s)"));
-                _Log?.Info(($"{assembly} ({assembly.UnKnownReferences.Count()} ignored reference(s)"));
+                _Log?.Info(($"{assembly.File.Name}"));
 
-                _Log.Verbose($"++++++++++++++++++++++++++++++++");
-                _Log.Verbose($"respecting:");
+
                 foreach (var reference in assembly.KnownReferences) {
-                    _Log.Verbose($"  + {reference.Identity}");
+                    _Log.Verbose($"  (+) {reference.Identity}");
                 }
-                _Log.Verbose($"--------------------------------");
-                _Log.Verbose($"ignoring:");
                 foreach (var reference in assembly.UnKnownReferences) {
-                    _Log.Verbose($"  - {reference.Identity}");
+                    _Log.Verbose($"  (-) {reference.Identity}");
                 }
 
+                _Log?.Info("");
             }
+
         }
 
         private void Echo(IEnumerable<BundleModel> bundles) {
             foreach (var bundle in bundles) {
-                _Log.Info("=======================================================");
                 _Log.Info(bundle.PackageFullName);
-                _Log.Info("=======================================================");
 
-
-                _Log.Verbose("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-                _Log.Verbose("included assemblies");
-                _Log.Verbose("+++++++++++++++++++++++++++++++++++++++++++++++++++++++");
                 foreach (var assembly in bundle.Assemblies) {
-                    _Log.Verbose($"{assembly.File}");
+                    _Log.Verbose($"  (+) {assembly.File}");
                 }
 
-                _Log.Verbose("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                _Log.Verbose("package references");
-                _Log.Verbose("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                 foreach (var refrencedBundle in bundle.ReferencedBundles) {
-                    _Log.Verbose($"{refrencedBundle.PackageFullName}");
+                    _Log.Verbose($"  (~) {refrencedBundle.PackageFullName}");
                 }
+
+                _Log?.Info("");
             }
+            
 
         }
     }

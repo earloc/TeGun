@@ -8,14 +8,18 @@
     <RepositoryUrl>https://github.com/earloc/TeGun</RepositoryUrl>
     <Authors>Alexander Clare</Authors>
     <Company>Alexander Clare</Company>
-    <Product>TeGun</Product>
-    <Copyright>2017 Alexander Clare</Copyright>
+    <Product>dotnet-tegun</Product>
+    <Copyright>Copyright (c) 2017 Alexander Clare</Copyright>
     <RepositoryType>git</RepositoryType>
     <PackageTags>DevOps NuGet create commandline utility</PackageTags>
-    <PackageReleaseNotes>0.1.0 inital release</PackageReleaseNotes>
-    <AssemblyVersion>0.1.0.0</AssemblyVersion>
-    <FileVersion>0.1.0.0</FileVersion>
-    <Version>0.1.0-alpha01</Version>
+    <PackageReleaseNotes>0.2.0 optimize logging output
+0.1.0 inital release
+</PackageReleaseNotes>
+    <AssemblyVersion>0.2.0.0</AssemblyVersion>
+    <FileVersion>0.2.0.0</FileVersion>
+    <Version>0.2.0-alpha01</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseUrl>https://github.com/earloc/TeGun/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
   <ItemGroup>

@@ -5,18 +5,23 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <LangVersion>7.1</LangVersion>
-    <Version>0.1.0-alpha01</Version>
+    <Version>0.2.0-alpha01</Version>
     <Company>Alexander Clare</Company>
     <Authors>Alexander Clare</Authors>
-    <Copyright>2017 Alexander Clare</Copyright>
-    <PackageLicenseUrl></PackageLicenseUrl>
+    <Copyright>Copyright (c) 2017 Alexander Clare</Copyright>
+    <PackageLicenseUrl>https://github.com/earloc/TeGun/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/earloc/TeGun</PackageProjectUrl>
     <RepositoryUrl>https://github.com/earloc/TeGun</RepositoryUrl>
     <PackageTags>DevOps NuGet create commandline utility</PackageTags>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>0.1.0 inital release</PackageReleaseNotes>
-    <PackageId>TeGun.Cli</PackageId>
-    <AssemblyName>TeGun</AssemblyName>
+    <PackageReleaseNotes>0.2.0 optimize logging output
+0.1.0 inital release</PackageReleaseNotes>
+    <PackageId>dotnet-tegun</PackageId>
+    <AssemblyName>dotnet-tegun</AssemblyName>
+    <FileVersion>0.2.0.0</FileVersion>
+    <AssemblyVersion>0.2.0.0</AssemblyVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageIconUrl>https://github.com/earloc/tegun/tree/master/assets/tegun.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
