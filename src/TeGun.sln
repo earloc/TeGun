@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet-tegun", "TeGun.Cli\dotnet-tegun.csproj", "{EA553CF6-59BF-4D47-A336-2980F3B9B5E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet-tegun", "dotnet-tegun\dotnet-tegun.csproj", "{EA553CF6-59BF-4D47-A336-2980F3B9B5E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
