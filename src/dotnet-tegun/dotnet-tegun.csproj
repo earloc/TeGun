@@ -21,7 +21,7 @@
     <AssemblyName>dotnet-tegun</AssemblyName>
     <FileVersion>0.3.2.0</FileVersion>
     <AssemblyVersion>0.3.2.0</AssemblyVersion>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageIconUrl>https://github.com/earloc/TeGun/raw/master/assets/tegun.png</PackageIconUrl>
     <RootNamespace>TeGun</RootNamespace>
     <Description>TeGun (NuGet reversed) is a simple, yet handy cross-platform(.netcore) commandline-utility for creating nuget packages (nupkg) from a bunch of ordinary, unpackaged assemblies.
