@@ -2,6 +2,8 @@
 
 for creating NuGet-Packages out of ordinary, unpackaged assemblies.
 
+[![Build status](https://ci.appveyor.com/api/projects/status/sjvm65cyqa07kung/branch/master?svg=true)](https://ci.appveyor.com/project/earloc/tegun/branch/master)
+
 ## Synopsis ##
 TeGun (NuGet reversed) is a simple, yet handy cross-platform(.netcore) commandline-utility for creating nuget packages (nupkg) from a bunch of ordinary, unpackaged assemblies. 
 The main goal is to provide a fast tooling experience when dealing with third-party assemblies that do not come packaged via e.g. Nuget.org.
