@@ -17,8 +17,7 @@ dotnet_csproj:
   file_version: '{version}'
   informational_version: '{version}'
 build_script:
-- cmd: build.bat
-deploy:
+- cmd: build.batdeploy:
 - provider: NuGet
   api_key:
     secure: t5SNyxetZjFKY2X039J/o9YuJrNZSbkbptS3IERV1NBf2eRDyE9t81fr0wc2SK0Q
