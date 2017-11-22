@@ -2,6 +2,7 @@
 
 pushd src
 
+dotnet --version
 echo restoring
 echo ~~~~~~~~~~~~~~~~~~
 dotnet restore
