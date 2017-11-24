@@ -12,15 +12,23 @@ dotnet_csproj:
   patch: true
   file: '**\*.csproj'
   version: '{version}'
-  package_version: '{version}'
+  package_version: '{version}-pre'
   assembly_version: '{version}'
   file_version: '{version}'
   informational_version: '{version}'
 build_script:
 - cmd: build.bat
+artifacts:
+- path: '**/*.nuspec'
+  name: nuspecs
 deploy:
 - provider: NuGet
   api_key:
     secure: t5SNyxetZjFKY2X039J/o9YuJrNZSbkbptS3IERV1NBf2eRDyE9t81fr0wc2SK0Q
   on:
     branch: master
+- provider: NuGet
+  api_key:
+    secure: t5SNyxetZjFKY2X039J/o9YuJrNZSbkbptS3IERV1NBf2eRDyE9t81fr0wc2SK0Q
+  on:
+    branch: dev

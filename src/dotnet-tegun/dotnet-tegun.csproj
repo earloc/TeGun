@@ -5,7 +5,7 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <PackageType>DotnetCliTool</PackageType>
     <LangVersion>7.1</LangVersion>
-    <Version>0.3.2.0-pre</Version>
+    <Version>0.4.0-pre</Version>
     <Company>Alexander Clare</Company>
     <Authors>Alexander Clare</Authors>
     <Copyright>Copyright (c) 2017 Alexander Clare</Copyright>
