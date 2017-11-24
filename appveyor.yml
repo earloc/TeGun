@@ -11,7 +11,7 @@ assembly_info:
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
-  version: '{version}'
+  version: '{version}$(PackageSuffix)'
   package_version: '{version}$(PackageSuffix)'
   assembly_version: '{version}'
   file_version: '{version}'
