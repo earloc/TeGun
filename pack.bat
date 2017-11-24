@@ -1,12 +1,12 @@
 @echo off
 
 
-set PacakgeSuffix=-pre
+set PackageSuffix=-pre
 
 pushd src
 
 echo packing
-echo PacakgeSuffix:'%PacakgeSuffix%'
+echo PackageSuffix:'%PackageSuffix%'
 echo ------------------
 dotnet pack -c Release --version-suffix "-pre"
 echo packing done
