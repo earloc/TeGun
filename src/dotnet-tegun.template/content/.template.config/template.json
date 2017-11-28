@@ -1,0 +1,10 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Alexander Clare",
+    "classifications": [ "Common", "Tool" ],
+    "identity": "dotnet-tegun.template",
+    "name": "TeGun Project Template 0.4.0",
+    "shortName": "tegun",
+    "sourceName": "dotnet-tegun.template",  
+    "preferNameDirectory":true
+}
