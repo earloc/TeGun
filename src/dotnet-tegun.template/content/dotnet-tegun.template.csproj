@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="dotnet-tegun" Version="(0.4.0-pre, 1.0)"/> <!-- for pre 1.0 release, prefer automatic updates -->
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+</Project>
