@@ -5,7 +5,7 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <PackageType>DotnetCliTool</PackageType>
     <LangVersion>7.1</LangVersion>
-    <Version>0.4.0-pre</Version>
+    <Version>0.4</Version>
     <Company>Alexander Clare</Company>
     <Authors>Alexander Clare</Authors>
     <Copyright>Copyright (c) 2017 Alexander Clare</Copyright>
@@ -19,8 +19,8 @@
 0.1.0 inital release</PackageReleaseNotes>
     <PackageId>dotnet-tegun</PackageId>
     <AssemblyName>dotnet-tegun</AssemblyName>
-    <FileVersion>0.3.2.0</FileVersion>
-    <AssemblyVersion>0.3.2.0</AssemblyVersion>
+    <FileVersion>0.4.0.0</FileVersion>
+    <AssemblyVersion>0.4.0.0</AssemblyVersion>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageIconUrl>https://github.com/earloc/TeGun/raw/master/assets/tegun.png</PackageIconUrl>
     <RootNamespace>TeGun</RootNamespace>
