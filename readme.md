@@ -52,11 +52,11 @@ will get you going.
 ### [Any other options?](#any-other-options)
 Just clone the repo and built for your self ;).
 
-## [Prerequisits](Prerequisits)
+## [Prerequisits](#prerequisits)
 - [.net core 2 SDK](https://www.microsoft.com/net/learn/get-started/windows) installed for building and running
 - basic knowledge of [nuspec](https://docs.microsoft.com/en-us/nuget/schema/nuspec)
 
-## [Sample](#Sample)
+## [Sample](#sample)
 Let´s assume we have an app that does some MS Office-automation. Hence it requires certain assemblies from the Office-SDKs. We identify a bunch of available assemblies and copy them to c:\temp\officeSDK. The contents of the directory might look like his:
 
 - Microsoft.Office.Interop.OneNote.dll
