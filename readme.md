@@ -22,7 +22,7 @@ TeGun simply scans a directory for assemblies and analyzes their dependency-hier
 
 ## [Get the bits](#get-the-bits)
 
-###[Download](#download)
+### [Download](#download)
 Sorry folks, no pre-built / standalone releases yet. There might be a Chocolately distribution in the future, see [#5](https://github.com/earloc/TeGun/issues/5) and vote it up to get it considered.
 
 ### [DotnetCliTool](#dotnetclitool)
@@ -36,7 +36,7 @@ and run
 
     dotnet restore
 
-### Project template
+### [Project template](#project-template)
 To autmotate above mentioned steps, there is also a project template available. When installed and invoked, it will create a project-file with the needed *DotNetCliToolReference*
 
 Just run
@@ -67,7 +67,7 @@ Let´s assume we have an app that does some MS Office-automation. Hence it requi
 - ...
 
 
-In order to invoke TeGun, we utilize the dotnet cli extension point as described above. So let´s create a TeGun-enabled project
+In order to invoke TeGun, we utilize the dotnet cli extension point as described [here](https://github.com/earloc/TeGun/blob/dev/readme.md#project-template). So let´s create a TeGun-enabled project
 
     dotnet new tegun
     dotnet restore
@@ -131,7 +131,7 @@ If we now invoke the command:
 
     dotnet tegun nuspec office
 
-tegun will create nuspec-files according to the above settings in the subfolder *office/nuspecs*:
+TeGun will create nuspec-files according to the above settings in the subfolder *office/nuspecs*:
 
 - OfficeBundle.Sample.1.2.3.4.nuspec
 - earloc.Microsoft.Office.xxx.OneNote.14.0.0.0.nuspec
@@ -157,8 +157,6 @@ will produce the following packages at *office/packages*:
 - earloc.Microsoft.Office.xxx.PowerPoint.14.0.0.nupkg
 - earloc.Microsoft.Office.xxx.Publisher.14.0.0.nupkg
 - ...
-
-
 
 ## [Contributing](#contributing)
 
