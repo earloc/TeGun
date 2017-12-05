@@ -1,5 +1,7 @@
 # dotnet-tegun - The KickAss DevOps utility #
 
+[![Join the chat at https://gitter.im/dotnet-tegun/Lobby](https://badges.gitter.im/dotnet-tegun/Lobby.svg)](https://gitter.im/dotnet-tegun/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 for creating NuGet-Packages out of ordinary, unpackaged assemblies.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/sjvm65cyqa07kung/branch/master?svg=true)](https://ci.appveyor.com/project/earloc/tegun/branch/master)
