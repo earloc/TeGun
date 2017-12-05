@@ -1,7 +1,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>dotnet-tegun.template</id>
-    <version>0.4.0</version>
+    <version>0.4.1</version>
     <description>
       Project template for automatically creating a tegun-project with needed DotnetCliTool-Reference
     </description>
