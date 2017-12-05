@@ -4,9 +4,9 @@
 
 for creating NuGet-Packages out of ordinary, unpackaged assemblies.
 
-|[![Build status](https://ci.appveyor.com/api/projects/status/sjvm65cyqa07kung/branch/master?svg=true)](https://ci.appveyor.com/project/earloc/tegun/branch/master)
-|[![NuGet](https://img.shields.io/badge/nuget-v0.4.*--pre-blue.svg)](https://img.shields.io/badge/nuget-v0.4.*--pre-blue.svg)
-|[![Join the chat at https://gitter.im/dotnet-tegun/Lobby](https://badges.gitter.im/dotnet-tegun/Lobby.svg)](https://gitter.im/dotnet-tegun/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build status](https://ci.appveyor.com/api/projects/status/sjvm65cyqa07kung/branch/master?svg=true)](https://ci.appveyor.com/project/earloc/tegun/branch/master)
+[![NuGet](https://img.shields.io/badge/nuget-v0.4.*--pre-blue.svg)](https://img.shields.io/badge/nuget-v0.4.*--pre-blue.svg)
+[![Join the chat at https://gitter.im/dotnet-tegun/Lobby](https://badges.gitter.im/dotnet-tegun/Lobby.svg)](https://gitter.im/dotnet-tegun/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Synopsis ##
 TeGun (NuGet reversed) is a simple, yet handy cross-platform(.netcore) commandline-utility for creating nuget packages (nupkg) from a bunch of ordinary, unpackaged assemblies. 
