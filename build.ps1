@@ -3,7 +3,7 @@ param (
     [Parameter(Mandatory=$false)]$branch
 )
 
-. ".\_build.ps1";
+. ".\_Functions.ps1";
 
 $packageSuffix = GetPackageSuffix($branch)
 
